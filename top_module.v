@@ -26,7 +26,7 @@ module top_module(i0t, i1t, i2t, i3t, st, segt);
     wire[1:0] yt;
     wire[3:0] ytt;
     
-    assign ytt = {2'b0,yt};
+    assign ytt = {2'b00,yt};
     
     Mux_4_1 uut1(.a(i0t), .b(i1t), .c(i2t), .d(i3t), .s(st), .y(yt));
     
@@ -60,7 +60,7 @@ module BCD_7_SEG(bcd,seg);
     reg [6:0]seg;
     
     
-    always@(bcd)
+    always@(*)
     begin
         case(bcd)
             0 : seg = 7'b1000000;
