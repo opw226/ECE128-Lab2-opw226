@@ -27,14 +27,14 @@ module BCD_7_SEG_TB;
     
     
     integer i;
-    BCD_7_SEG uut3(bcdt, segt);
+    top_module uut3(bcdt, segt);
     
     initial begin
-        for(i=0; i<4; i=i+1)
+        for(i=0; i<7; i=i+1)
         begin
-             bcdt = i;
-             #10;
+             #10 bcdt = i;
         end
-     end
+    #10 $stop;
+    end
    
 endmodule
